@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Bullet.gd" type="Script" id=2]
 
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.0
+bounce = 0.23
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 9.0
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 6
+mass = 65535.0
+physics_material_override = SubResource( 2 )
+gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="BulletShape" type="CollisionShape2D" parent="."]

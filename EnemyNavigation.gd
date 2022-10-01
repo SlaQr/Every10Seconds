@@ -7,11 +7,6 @@ var _player: KinematicBody2D
 func _ready():
 	_player = get_tree().get_root().find_node("Player", true, false)
 	set_target_location(_player.position)
-	#get_node("../AnimationPlayer").play("EnemyTimers")
-	
-func update_player_pos():
-	print("called")
-	#set_target_location(_player.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
