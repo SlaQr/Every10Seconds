@@ -14,6 +14,11 @@ config/name="Every10Seconds"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=960
+window/size/height=960
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

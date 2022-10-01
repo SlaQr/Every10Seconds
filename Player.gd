@@ -1,10 +1,5 @@
 extends KinematicBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 onready var bullet = preload("res://Bullet.tscn")
 
 var player_speed = 200
@@ -22,26 +17,21 @@ func _attack():
 
 	# get fire direction
 	var mouse_position = get_viewport().get_mouse_position()
-
-	var bullet_instance = bullet.instance()
-
-	bullet_instance.position = position
-
-	get_tree().root.add_child(bullet_instance)
-
 	var test = mouse_position - position
 
-	bullet_instance.set_direction(test.normalized())
-
-	#get_tree.get_root().add_child(bullet_instance)
 	# get gun type
+	# TODO
+	var bullet_instance = bullet.instance()
 
 	# fire bullet(s)
+	
+	bullet_instance.position = position
+	get_tree().root.add_child(bullet_instance)
+	bullet_instance.set_direction(test.normalized())
 
 	# start cooldown
 	can_attack = false;
 	get_node("Timers").play("GunReload")
-	print("fired")
 
 func _player_movement():
 
@@ -53,24 +43,24 @@ func _player_movement():
 	var _returned = move_and_slide(input)
 
 # Called when the node enters the scene tree for the first time.
+
+###################################
+########## GODOT METHODS ##########
+###################################
+
 func _ready():
 	pass
 
-func _process(delta):
-
+func _process(_delta):
 	if _check_attack():
 		_attack()
 
-	var _a = delta + 1
-
-func _physics_process(delta):
-	var _a = delta + 1
+func _physics_process(_delta):
 	_player_movement()
 
 ###################################
-######## EXTERNAL SIGNALS #########
+######### EXTERNAL SIGNALS ########
 ###################################
 
 func reset_attack():
-	print("reloaded")
 	can_attack = true
