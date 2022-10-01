@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var bullet = preload("res://Bullet.tscn")
 
-var player_speed = 200
+var player_speed = 300
 
 var can_attack = true;
 
