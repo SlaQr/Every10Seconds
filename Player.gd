@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 onready var bullet = preload("res://Bullet.tscn")
 
+onready var anim = get_node("Animations/Movement")
+
 var player_speed = 300
 
 var can_attack = true;
@@ -38,9 +40,28 @@ func _player_movement():
 	var input = Vector2(
 		_compare_input("plr_right", "plr_left"),
 		_compare_input("plr_down", "plr_up")
-	).normalized() * player_speed
+	)
+	
+	var _returned = move_and_slide(input.normalized() * player_speed)
 
-	var _returned = move_and_slide(input)
+	if input.x == 0 && input.y == 0:
+		anim.play("Idle")
+		return
+	
+	anim.flip_h = false
+	if abs(input.x) >= abs(input.y):
+		anim.play("WalkSide")
+		if input.x < 0:
+			anim.flip_h = true
+		return
+
+	if input.y > 0:
+		anim.play("WalkForward")
+	else:
+		anim.play("WalkBackward")
+	
+
+	
 
 # Called when the node enters the scene tree for the first time.
 
