@@ -144,9 +144,41 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":694,"h":473},
 	"sourceSize": {"w":694,"h":473}
 },
+"Walk_Horizonal0000":
+{
+	"frame": {"x":2776,"y":1266,"w":449,"h":466},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":449,"h":466},
+	"sourceSize": {"w":449,"h":466}
+},
+"Walk_Horizonal0001":
+{
+	"frame": {"x":3225,"y":1266,"w":449,"h":466},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":449,"h":466},
+	"sourceSize": {"w":449,"h":466}
+},
+"Walk_Horizonal0002":
+{
+	"frame": {"x":0,"y":1739,"w":449,"h":466},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":449,"h":466},
+	"sourceSize": {"w":449,"h":466}
+},
+"Walk_Horizonal0003":
+{
+	"frame": {"x":449,"y":1739,"w":449,"h":466},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":449,"h":466},
+	"sourceSize": {"w":449,"h":466}
+},
 "idle0000":
 {
-	"frame": {"x":2776,"y":1266,"w":533,"h":449},
+	"frame": {"x":898,"y":1739,"w":533,"h":449},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":533,"h":449},
@@ -154,7 +186,7 @@
 },
 "idle0001":
 {
-	"frame": {"x":3309,"y":1266,"w":533,"h":449},
+	"frame": {"x":1431,"y":1739,"w":533,"h":449},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":533,"h":449},
@@ -165,7 +197,7 @@
 	"version": "22.0.1.105",
 	"image": "Fisto_Puncho.png",
 	"format": "RGBA8888",
-	"size": {"w":4096,"h":2048},
+	"size": {"w":4096,"h":4096},
 	"scale": "1"
 }
 }
