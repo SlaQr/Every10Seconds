@@ -1,0 +1,59 @@
+﻿{"frames": {
+
+"Boss_Hand0000":
+{
+	"frame": {"x":0,"y":0,"w":534,"h":506},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":534,"h":506},
+	"sourceSize": {"w":534,"h":506}
+},
+"Boss_Hand0001":
+{
+	"frame": {"x":534,"y":0,"w":534,"h":506},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":534,"h":506},
+	"sourceSize": {"w":534,"h":506}
+},
+"Boss_Hand0002":
+{
+	"frame": {"x":1068,"y":0,"w":534,"h":506},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":534,"h":506},
+	"sourceSize": {"w":534,"h":506}
+},
+"Boss_face0000":
+{
+	"frame": {"x":0,"y":506,"w":736,"h":629},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":736,"h":629},
+	"sourceSize": {"w":736,"h":629}
+},
+"Boss_face0001":
+{
+	"frame": {"x":736,"y":506,"w":736,"h":629},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":736,"h":629},
+	"sourceSize": {"w":736,"h":629}
+},
+"Boss_face0002":
+{
+	"frame": {"x":0,"y":1135,"w":736,"h":629},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":736,"h":629},
+	"sourceSize": {"w":736,"h":629}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho_Boss_HeadHands.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}
