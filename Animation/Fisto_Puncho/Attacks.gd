@@ -8,6 +8,8 @@ var last_h_punch = "PunchB"
 var can_attack = true;
 var can_punch = true;
 
+var previously_punched = {}
+
 var punch_force = 1000
 
 func punchH():
@@ -34,6 +36,7 @@ func allow_punch():
 
 func _punch():
 
+	previously_punched.clear()
 	# get fire direction
 	#var mouse_position = get_viewport().get_mouse_position()
 	#var test = mouse_position - position
@@ -73,11 +76,14 @@ func _process(_delta):
 
 func _on_PunchH_Hitbox_body_entered(body:RigidBody2D):
 
-	body.damage(10)
+	if !previously_punched.has(body):
 
-	body.apply_central_impulse(
-		Vector2(sign(get_parent().scale.x), 0) * punch_force
-	)
+		previously_punched[body] = true
+		body.damage(10)
+
+		body.apply_central_impulse(
+			Vector2(sign(get_parent().scale.x), 0) * punch_force
+		)
 
 func _on_Attacks_animation_finished():
 	allow_punch()
