@@ -40,7 +40,8 @@ texture = ExtResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 3 )]
 scale = Vector2( 0.203796, 0.169851 )
-frame = 3
+animation = "Idle"
+frame = 0
 playing = true
 
 [node name="Timers" type="AnimationPlayer" parent="."]
