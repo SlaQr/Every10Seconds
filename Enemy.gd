@@ -11,6 +11,8 @@ var _momentum = Vector2(0,0)
 
 export var movespeed: int = 80
 
+export var health = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -21,7 +23,12 @@ func _ready():
 #	pass
 
 #func _process(delta):
-	
+func damage(d: int):
+	health -= d
+	if health <= 0:
+		get_parent().remove_child(self)
+		queue_free()
+
 
 func _physics_process(delta):
 
