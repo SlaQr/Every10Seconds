@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+} ]
+
+[node name="AnimatedSpriteBase" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "Walk"

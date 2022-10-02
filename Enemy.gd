@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+onready var hit_sound_delay: Timer = get_node("HitSoundDelay")
+onready var hit_sound: AudioStreamPlayer = get_node("HitSound")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -24,11 +26,11 @@ func _ready():
 
 #func _process(delta):
 func damage(d: int):
+
 	health -= d
 	if health <= 0:
 		get_parent().remove_child(self)
 		queue_free()
-
 
 func _physics_process(delta):
 
