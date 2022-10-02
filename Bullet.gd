@@ -5,10 +5,8 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 
-var travel_direction: Vector2
-
 var travel_speed = 600
-
+var travel_direction: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,9 +18,6 @@ func set_direction(v2):
 	apply_central_impulse(v2*600)
 	#add_central_force(v2*1000)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 #func _physics_process(delta):
 	#position += travel_direction * travel_speed * delta

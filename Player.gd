@@ -6,6 +6,7 @@ onready var anim = get_node("Animations/Movement")
 
 onready var attack_anim = get_node("Animations/Attacks")
 
+var can_move = true
 var player_speed = 300
 
 func _compare_input(s1, s2):
@@ -46,4 +47,5 @@ func _player_movement():
 ###################################
 
 func _physics_process(_delta):
-	_player_movement()
+	if can_move:
+		_player_movement()
