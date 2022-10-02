@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Animation/Fisto_Puncho/Attacks.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Animation/Fisto_Puncho/Movement.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Animation/Fisto_Puncho/Attacks.gd" type="Script" id=4]
+[ext_resource path="res://Sound FX/Punch/10sd Punch Swing 1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sound FX/Punch/10sd Punch Impact 1.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 283.538, 223.494 )
@@ -34,6 +36,17 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="Sound" type="Node" parent="."]
+
+[node name="PunchSwing" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 5 )
+
+[node name="PunchHit" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 6 )
+
+[node name="PunchHitDelay" type="Timer" parent="Sound"]
+one_shot = true
+
 [node name="Animations" type="Node2D" parent="."]
 scale = Vector2( 0.15, 0.15 )
 
@@ -41,15 +54,13 @@ scale = Vector2( 0.15, 0.15 )
 scale = Vector2( 1, 1 )
 z_index = 2
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="Attacks" parent="Animations" instance=ExtResource( 1 )]
 visible = false
 position = Vector2( 280.202, 0 )
 scale = Vector2( 1, 1 )
-z_index = -1
-frame = 1
+frame = 0
 script = ExtResource( 4 )
 
 [node name="PunchH_Hitbox" type="Area2D" parent="Animations"]
@@ -66,6 +77,10 @@ position = Vector2( -23.3502, 16.6787 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 
+[node name="HurtboxDisabler" type="Timer" parent="Animations"]
+wait_time = 0.08
+one_shot = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
 shape = SubResource( 3 )
@@ -73,5 +88,7 @@ shape = SubResource( 3 )
 [node name="Timers" type="AnimationPlayer" parent="."]
 anims/GunReload = SubResource( 2 )
 
+[connection signal="timeout" from="Sound/PunchHitDelay" to="Animations/Attacks" method="_on_PunchHitDelay_timeout"]
 [connection signal="animation_finished" from="Animations/Attacks" to="Animations/Attacks" method="_on_Attacks_animation_finished"]
 [connection signal="body_entered" from="Animations/PunchH_Hitbox" to="Animations/Attacks" method="_on_PunchH_Hitbox_body_entered"]
+[connection signal="timeout" from="Animations/HurtboxDisabler" to="Animations/Attacks" method="_on_HurtboxDisabler_timeout"]

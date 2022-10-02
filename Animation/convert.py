@@ -2,7 +2,6 @@ from PIL import Image
 import json
 import os
 
-
 # correct file encoding using powershell and create folder for
 # decompiled images from atlas based on JSON and PNG file name
 powershell = """
@@ -46,4 +45,3 @@ for file in json_files:
             # under json filename folder, using the frame 
             # name as the PNG name
             img.crop((x,y,x+w,y+h)).save("{}\\{}.png".format(folder, framename))
-
