@@ -1,0 +1,43 @@
+﻿{"frames": {
+
+"Demon0000":
+{
+	"frame": {"x":0,"y":0,"w":563,"h":471},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":563,"h":471},
+	"sourceSize": {"w":563,"h":471}
+},
+"Demon0001":
+{
+	"frame": {"x":563,"y":0,"w":563,"h":471},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":563,"h":471},
+	"sourceSize": {"w":563,"h":471}
+},
+"Demon0002":
+{
+	"frame": {"x":1126,"y":0,"w":563,"h":471},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":563,"h":471},
+	"sourceSize": {"w":563,"h":471}
+},
+"Demon0003":
+{
+	"frame": {"x":0,"y":471,"w":563,"h":471},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":563,"h":471},
+	"sourceSize": {"w":563,"h":471}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho__Demon_2.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1"
+}
+}
