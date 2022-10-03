@@ -1,26 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Levels/TileMap/Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://Animation/Ground_LVL_1/Ground0000.png" type="Texture" id=3]
 [ext_resource path="res://PlayerSpawn.gd" type="Script" id=4]
-
-[sub_resource type="Animation" id=6]
-resource_name = "DisablePlayerPull"
-tracks/0/type = "method"
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "disable_player_pull"
-} ]
-}
 
 [node name="Level" type="Navigation2D"]
 edge_connection_margin = 32.0
@@ -33,12 +16,8 @@ one_shot = true
 autostart = true
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-visible = false
 position = Vector2( 480, 480 )
 script = ExtResource( 4 )
-
-[node name="DisableTimer" type="AnimationPlayer" parent="PlayerSpawn"]
-anims/DisablePlayerPull = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 3.75, 3.80952 )
