@@ -1,0 +1,43 @@
+﻿{"frames": {
+
+"Health Bar0000":
+{
+	"frame": {"x":0,"y":0,"w":1193,"h":136},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1193,"h":136},
+	"sourceSize": {"w":1193,"h":136}
+},
+"Health Bar0001":
+{
+	"frame": {"x":0,"y":136,"w":1193,"h":136},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1193,"h":136},
+	"sourceSize": {"w":1193,"h":136}
+},
+"Health Bar0002":
+{
+	"frame": {"x":0,"y":272,"w":1193,"h":136},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1193,"h":136},
+	"sourceSize": {"w":1193,"h":136}
+},
+"Health Bar0003":
+{
+	"frame": {"x":0,"y":408,"w":1193,"h":136},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1193,"h":136},
+	"sourceSize": {"w":1193,"h":136}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho_HPBAR.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1"
+}
+}
