@@ -9,6 +9,8 @@ onready var attack_anim = get_node("Animations/Attacks")
 
 var can_move = false
 var player_speed = 300
+var invulnerable = false
+var health = 100
 
 func player_slam():
 
@@ -18,6 +20,19 @@ func player_slam():
 	ground_slam.visible = true
 	ground_slam.frame = 0
 	ground_slam.play("Slam")
+
+func die():
+	Global.emit_signal("player_died")
+	pass
+
+func damage(d: int):
+	if not invulnerable:
+		health -= d
+		invulnerable = true
+		get_node("InvulnerabilityReset").start(1.0)
+
+		if health <= 0:
+			die()
 
 func enable_player_input():
 	can_move = true
@@ -68,3 +83,6 @@ func _player_movement():
 func _physics_process(_delta):
 	if can_move:
 		_player_movement()
+
+func _on_InvulnerabilityReset_timeout():
+	invulnerable = false

@@ -52,15 +52,10 @@ func set_random_movement():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#get_node("Attacks").play("BulletSmash")
 	seek_position = true
 	seeked_position = Vector2(300, 300)
 
 	delay = get_parent().get_parent().delay
-	connect("test_signal", self, "test")
-
-func test():
-	pass
 
 func _process(delta):
 

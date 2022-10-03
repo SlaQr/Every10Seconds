@@ -17,4 +17,5 @@ animations = [ {
 scale = Vector2( 0.227, 0.227 )
 frames = SubResource( 1 )
 animation = "Walk"
+frame = 3
 playing = true
