@@ -9,6 +9,9 @@
 edge_connection_margin = 32.0
 script = ExtResource( 2 )
 next_level = "res://Levels/Level3.tscn"
+spawn_count = 4
+spawn_angel1 = true
+spawn_angel2 = true
 
 [node name="LevelSwitchTimer" type="Timer" parent="."]
 wait_time = 11.0

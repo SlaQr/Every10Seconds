@@ -9,6 +9,13 @@
 edge_connection_margin = 32.0
 script = ExtResource( 1 )
 next_level = "res://Levels/Victory.tscn"
+spawn_count = 8
+spawn_demon1 = true
+spawn_demon2 = true
+spawn_zombie1 = true
+spawn_zombie2 = true
+spawn_angel1 = true
+spawn_angel2 = true
 
 [node name="LevelSwitchTimer" type="Timer" parent="."]
 wait_time = 11.0
@@ -42,28 +49,28 @@ tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 196609, -65535, 4, 196609, -65534
 [node name="EnemySpawns" type="Node2D" parent="."]
 
 [node name="Spawn" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 0, 384 )
+position = Vector2( 22, 26 )
 
 [node name="Spawn2" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 0, 448 )
+position = Vector2( 14, 452 )
 
 [node name="Spawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 0, 512 )
+position = Vector2( 24, 928 )
 
 [node name="Spawn4" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 0, 576 )
+position = Vector2( 476, 936 )
 
 [node name="Spawn5" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 960, 384 )
+position = Vector2( 472, 22 )
 
 [node name="Spawn6" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 960, 448 )
+position = Vector2( 930, 24 )
 
 [node name="Spawn7" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 960, 512 )
+position = Vector2( 936, 482 )
 
 [node name="Spawn8" type="Node2D" parent="EnemySpawns"]
-position = Vector2( 960, 576 )
+position = Vector2( 928, 938 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
