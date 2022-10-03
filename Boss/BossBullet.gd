@@ -17,3 +17,9 @@ func _on_BossBullet_body_entered(body:Node):
 	if body.has_method("damage"):
 		body.damage(10)
 	get_parent().call_deferred("remove_child", self)
+
+func _ready():
+	Global.connect("player_died", self, "_on_player_died")
+
+func _on_player_died():
+	pass
