@@ -2,11 +2,15 @@ extends AnimatedSprite
 
 onready var player = get_parent().get_parent()
 onready var punchH_hitbox = get_node("../PunchH_Hitbox")
+onready var punchU_hitbox = get_node("../PunchU_Hitbox")
+onready var punchD_hitbox = get_node("../PunchD_Hitbox")
 onready var movement_anim = get_node("../Movement")
 onready var punch_swing: AudioStreamPlayer = get_node("../../Sound/PunchSwing")
 onready var punch_hit: AudioStreamPlayer = get_node("../../Sound/PunchHit")
 onready var punch_hit_delay: Timer = get_node("../../Sound/PunchHitDelay")
 onready var hurtbox_diabler: Timer = get_node("../HurtboxDisabler")
+
+onready var attacks2 = get_node("../Attacks2")
 
 var last_h_punch = "PunchB"
 var can_attack = true;
@@ -30,31 +34,51 @@ func punchH():
 	can_punch = false
 	play(last_h_punch)
 
+func punchD():
+	attacks2.z_index = 3
+	punchD_hitbox.monitoring = true
+	attacks2.visible = true
+	can_punch = false
+
+	attacks2.play("PunchD")
+
+func punchU():
+	attacks2.z_index = 1
+	punchU_hitbox.monitoring = true
+	attacks2.visible = true
+	can_punch = false
+
+	attacks2.play("PunchU")
+
 func _check_punch():
 	return Input.is_action_pressed("plr_fire") and can_punch
 
 func disable_hitboxes():
 	punchH_hitbox.monitoring = false
+	punchU_hitbox.monitoring = false
+	punchD_hitbox.monitoring = false
 	
 func allow_punch():
 	visible = false
+	attacks2.visible = false
 	can_punch = true
 
 func _punch():
 
 	previously_punched.clear()
-
-	punch_swing.play()
 	hurtbox_diabler.start(0.08)
 
 	var movement_direction = movement_anim.animation
 
 	if movement_direction == "WalkSide":
+		punch_swing.play()
 		punchH()
 	if movement_direction == "WalkBackward":
-		pass
-	if movement_direction == "WalkSForward":
-		pass
+		punch_swing.play()
+		punchU()
+	if movement_direction == "WalkForward":
+		punch_swing.play()
+		punchD()
 	if movement_direction == "Idle":
 		pass
 	
@@ -92,10 +116,37 @@ func _on_PunchH_Hitbox_body_entered(body:RigidBody2D):
 			punch_hit_delay.start(0.15)
 
 		previously_punched[body] = true
-		body.damage(10)
+		body.damage_enemy(10)
 
 		body.apply_central_impulse(
 			Vector2(sign(get_parent().scale.x), 0) * punch_force
+		)
+
+
+func _on_PunchD_Hitbox_body_entered(body:Node):
+	if !previously_punched.has(body):
+
+		if previously_punched.empty():
+			punch_hit_delay.start(0.15)
+
+		previously_punched[body] = true
+		body.damage_enemy(10)
+
+		body.apply_central_impulse(
+			Vector2(0, 1) * punch_force
+		)
+
+func _on_PunchU_Hitbox_body_entered(body:Node):
+	if !previously_punched.has(body):
+
+		if previously_punched.empty():
+			punch_hit_delay.start(0.15)
+
+		previously_punched[body] = true
+		body.damage_enemy(10)
+
+		body.apply_central_impulse(
+			Vector2(0, -1) * punch_force
 		)
 
 func _on_PunchHitDelay_timeout():
@@ -106,3 +157,4 @@ func _on_HurtboxDisabler_timeout():
 
 func _on_Attacks_animation_finished():
 	allow_punch()
+

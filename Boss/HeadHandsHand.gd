@@ -20,6 +20,9 @@ var free_move = true
 var seek_position = false
 var seeked_position: Vector2
 
+func _on_player_died():
+	get_node("Attacks").stop()
+
 func open_hand_shake():
 	free_move = false
 	play("floating")
@@ -54,6 +57,8 @@ func set_random_movement():
 func _ready():
 	seek_position = true
 	seeked_position = Vector2(300, 300)
+
+	Global.connect("player_died", self, "_on_player_died")
 
 	delay = get_parent().get_parent().delay
 

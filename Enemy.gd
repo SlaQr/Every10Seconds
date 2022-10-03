@@ -15,8 +15,11 @@ export var movespeed: int = 80
 
 export var health = 100
 
+var player_alive = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.connect("player_died", self, "_on_player_died")
 	pass # Replace with function body.
 
 
@@ -24,8 +27,12 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func _on_player_died():
+	player_alive = false
+	pass
+
 #func _process(delta):
-func damage(d: int):
+func damage_enemy(d: int):
 
 	health -= d
 	if health <= 0:
@@ -34,9 +41,10 @@ func damage(d: int):
 
 func _physics_process(delta):
 
-	var momentum = position.move_toward(next_location, delta*movespeed)\
-				 - position
-	apply_central_impulse(momentum)
+	if player_alive:
+		var momentum = position.move_toward(next_location, delta*movespeed)\
+					- position
+		apply_central_impulse(momentum)
 	rotation_degrees = 0
 	#_momentum = move_and_slide(_momentum)
 

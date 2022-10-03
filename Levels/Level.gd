@@ -23,6 +23,8 @@ onready var _angel_2 = preload("res://Animation/Fisto_Puncho_Angel_2/AnimatedSpr
 
 onready var spawnpoints = get_node("EnemySpawns").get_children()
 
+var music_node: AudioStreamPlayer
+
 var spawn_options: Array = []
 
 var angel1_health = 10
@@ -56,7 +58,11 @@ func _ready():
 
 	Global.next_level = load(next_level)
 
+	Global.connect("player_died", self, "_on_player_died")
+
 	get_node("SpawnTimer").wait_time = spawn_rate
+
+	music_node = get_tree().root.find_node("Music", true, false)
 
 	if spawn_demon1:
 		spawn_options.append("Demon1")
@@ -100,10 +106,11 @@ func spawn_enemies():
 			enemy_holder.add_child(enemy)
 			enemy.position = spawn_location.position
 
-func player_died():
+func _on_player_died():
 	get_node("LevelSwitchTimer").stop()
 	get_node("SpawnTimer").stop()
-	get_tree().root.find_node("Music", true, false).stop()
+	music_node.stop()
+	#get_tree().root.find_node("Music", true, false).stop()
 
 func _on_SpawnTimer_timeout():
 	spawn_enemies()
@@ -115,5 +122,6 @@ func _on_LevelSwitchTimer_timeout():
 
 func _on_MusicStart_timeout():
 
-	get_tree().root.find_node("Music", true, false).play()
+	music_node.play()
+	#get_tree().root.find_node("Music", true, false).play()
 	pass # Replace with function body.

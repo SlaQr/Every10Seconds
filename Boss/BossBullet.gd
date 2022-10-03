@@ -22,4 +22,4 @@ func _ready():
 	Global.connect("player_died", self, "_on_player_died")
 
 func _on_player_died():
-	pass
+	visible = false

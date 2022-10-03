@@ -7,6 +7,7 @@ var current_level_node
 
 func _ready():
 	Global.connect("next_level", self, "anim_level_out")
+	Global.connect("player_died", self, "_on_player_died")
 
 func unload_current_level():
 	if current_level_node:
@@ -30,3 +31,9 @@ func anim_level_out():
 
 func change_levels():
 	Global.emit_signal("next_level")
+
+func _on_player_died():
+
+	# TODO game over screen
+	remove_child(current_level_node)
+	Global.next_level = load("res://Levels/Level1.tscn")
