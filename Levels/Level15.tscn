@@ -8,7 +8,7 @@
 [node name="Level" type="Navigation2D"]
 edge_connection_margin = 32.0
 script = ExtResource( 1 )
-next_level = "res://Levels/Level5.tscn"
+next_level = "res://Levels/Victory.tscn"
 
 [node name="LevelSwitchTimer" type="Timer" parent="."]
 wait_time = 11.0
