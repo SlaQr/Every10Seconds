@@ -100,6 +100,10 @@ func spawn_enemies():
 			enemy_holder.add_child(enemy)
 			enemy.position = spawn_location.position
 
+func player_died():
+	get_node("LevelSwitchTimer").stop()
+	get_node("SpawnTimer").stop()
+	get_tree().root.find_node("Music", true, false).stop()
 
 func _on_SpawnTimer_timeout():
 	spawn_enemies()
