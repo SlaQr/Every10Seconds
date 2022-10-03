@@ -1,0 +1,43 @@
+﻿{"frames": {
+
+"Zombie_20000":
+{
+	"frame": {"x":0,"y":0,"w":281,"h":347},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":347},
+	"sourceSize": {"w":281,"h":347}
+},
+"Zombie_20001":
+{
+	"frame": {"x":281,"y":0,"w":281,"h":347},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":347},
+	"sourceSize": {"w":281,"h":347}
+},
+"Zombie_20002":
+{
+	"frame": {"x":562,"y":0,"w":281,"h":347},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":347},
+	"sourceSize": {"w":281,"h":347}
+},
+"Zombie_20003":
+{
+	"frame": {"x":0,"y":347,"w":281,"h":347},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":281,"h":347},
+	"sourceSize": {"w":281,"h":347}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho_Zombie_2.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

@@ -1,0 +1,27 @@
+﻿{"frames": {
+
+"Angel_20000":
+{
+	"frame": {"x":0,"y":0,"w":427,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":427,"h":490},
+	"sourceSize": {"w":427,"h":490}
+},
+"Angel_20001":
+{
+	"frame": {"x":427,"y":0,"w":427,"h":490},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":427,"h":490},
+	"sourceSize": {"w":427,"h":490}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho_Angel_2.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":512},
+	"scale": "1"
+}
+}
