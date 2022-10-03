@@ -13,6 +13,7 @@ func _ready():
 	if player:
 		player.get_parent().call_deferred("remove_child", player)
 
+	get_tree().root.find_node("Music", true, false).stop()
 	get_tree().root.find_node("Healthbar", true, false).visible = false
 
 

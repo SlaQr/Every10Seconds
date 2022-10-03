@@ -16,7 +16,9 @@ func _ready():
 
 func _on_player_death():
 
-	get_parent().reload_current_scene()
+	get_tree().change_scene(get_tree().current_scene.filename)
+
+	#get_parent().reload_current_scene()
 	#$visible = true
 	#$player.health = 100
 	#$player.position = Vector2(-400, -400)
