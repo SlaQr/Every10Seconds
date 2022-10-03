@@ -1,8 +1,8 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Animation/Fisto_Puncho_Start/Start0000.png" type="Texture" id=3]
 [ext_resource path="res://MainMenu.gd" type="Script" id=4]
 [ext_resource path="res://Animation/Fisto_Puncho_Smoke/Smoke0007.png" type="Texture" id=5]
 [ext_resource path="res://Animation/Fisto_Puncho_Smoke/Smoke0005.png" type="Texture" id=6]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Animation/Fisto_Puncho_Smoke/Smoke0003.png" type="Texture" id=12]
 [ext_resource path="res://Animation/Fisto_Puncho_Smoke/Smoke0004.png" type="Texture" id=13]
 [ext_resource path="res://Music/Every 10 Seconds Music Mastered 1.mp3" type="AudioStream" id=14]
+[ext_resource path="res://Animation/Fisto_Puncho_Start/Start0001.png" type="Texture" id=15]
 
 [sub_resource type="Animation" id=2]
 resource_name = "LevelIn"
@@ -105,15 +106,29 @@ animations = [ {
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" type="TextureProgress" parent="UI"]
+margin_top = 832.0
+margin_right = 997.0
+margin_bottom = 1477.0
+rect_scale = Vector2( 0.963883, 0.187467 )
+value = 100.0
+texture_progress = ExtResource( 3 )
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 192 )
+position = Vector2( 512, 128 )
 
 [node name="LevelSwitcher" type="AnimationPlayer" parent="."]
 anims/LevelIn = SubResource( 2 )
 anims/LevelOut = SubResource( 1 )
+
+[node name="GameOver" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
 [node name="MainMenu" type="Control" parent="."]
 margin_right = 40.0
@@ -123,9 +138,11 @@ script = ExtResource( 4 )
 [node name="Start" type="TextureButton" parent="MainMenu"]
 margin_left = 320.0
 margin_top = 384.0
-margin_right = 640.0
-margin_bottom = 512.0
+margin_right = 1327.0
+margin_bottom = 1061.0
+rect_scale = Vector2( 0.317728, 0.283533 )
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 15 )
 
 [node name="CloudTransition" type="AnimatedSprite" parent="."]
 position = Vector2( -524.8, -128 )

@@ -16,3 +16,4 @@ scale = Vector2( 0.227, 0.227 )
 frames = SubResource( 1 )
 animation = "Walk"
 speed_scale = 0.5
+playing = true

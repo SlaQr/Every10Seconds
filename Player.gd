@@ -6,16 +6,25 @@ onready var anim = get_node("Animations/Movement")
 onready var ground_crack = get_node("Animations/GroundCrack")
 onready var ground_slam = get_node("Animations/GroundSlam")
 onready var attack_anim = get_node("Animations/Attacks")
+var healthbar
 
 var can_move = false
 var player_speed = 300
 var invulnerable = false
 var health = 100
 
+func _ready():
+	healthbar = get_tree().root.find_node("Healthbar", true, false)
+
+func _process(_delta):
+	healthbar.value = health
+
 func player_slam():
 
 	can_move = false
 	anim.visible = false
+
+	get_node("Hurtbox").monitoring = false
 
 	ground_slam.visible = true
 	ground_slam.frame = 0
@@ -31,12 +40,15 @@ func damage(d: int):
 		invulnerable = true
 		get_node("InvulnerabilityReset").start(1.0)
 
+		healthbar.value = health
+
 		if health <= 0:
 			die()
 
 func enable_player_input():
 	can_move = true
 	anim.visible = true
+	get_node("Hurtbox").monitoring = true
 	ground_slam.visible = false
 	ground_crack.visible = false
 
@@ -86,3 +98,7 @@ func _physics_process(_delta):
 
 func _on_InvulnerabilityReset_timeout():
 	invulnerable = false
+
+
+func _on_Hurtbox_body_entered(_body:Node):
+	damage(3)

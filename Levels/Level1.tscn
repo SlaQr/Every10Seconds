@@ -9,12 +9,7 @@
 edge_connection_margin = 32.0
 script = ExtResource( 2 )
 next_level = "res://Levels/Level2.tscn"
-spawn_count = 10
-spawn_demon1 = true
-spawn_demon2 = true
-spawn_zombie1 = true
-spawn_zombie2 = true
-spawn_angel1 = true
+spawn_rate = 0.5
 spawn_angel2 = true
 
 [node name="MusicStart" type="Timer" parent="."]
