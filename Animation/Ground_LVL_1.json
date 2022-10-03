@@ -2,18 +2,18 @@
 
 "Ground0000":
 {
-	"frame": {"x":0,"y":0,"w":256,"h":252},
+	"frame": {"x":0,"y":0,"w":505,"h":505},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":252},
-	"sourceSize": {"w":256,"h":252}
+	"spriteSourceSize": {"x":0,"y":0,"w":505,"h":505},
+	"sourceSize": {"w":505,"h":505}
 }},
 "meta": {
 	"app": "Adobe Animate",
 	"version": "22.0.1.105",
 	"image": "Ground_LVL_1.png",
 	"format": "RGBA8888",
-	"size": {"w":256,"h":256},
+	"size": {"w":512,"h":512},
 	"scale": "1"
 }
 }
