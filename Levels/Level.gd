@@ -1,5 +1,6 @@
 extends Navigation2D
 
+export var next_level: String
 export var spawn_rate: float = 1.0
 export var spawn_count: int = 1
 
@@ -20,6 +21,8 @@ var spawn_options: Array = []
 
 # Create array of possible spawns
 func _ready():
+
+	Global.next_level = load(next_level)
 
 	get_node("SpawnTimer").wait_time = spawn_rate
 
@@ -49,3 +52,7 @@ func spawn_enemies():
 
 func _on_SpawnTimer_timeout():
 	spawn_enemies()
+
+# next level
+func _on_LevelSwitchTimer_timeout():
+	Global.emit_signal("next_level")
