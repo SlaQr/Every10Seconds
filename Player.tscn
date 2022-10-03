@@ -64,6 +64,8 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="InvulnerabilityReset" type="Timer" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
 shape = SubResource( 3 )
@@ -85,7 +87,6 @@ scale = Vector2( 0.15, 0.15 )
 [node name="Movement" parent="Animations" instance=ExtResource( 3 )]
 z_index = 2
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="GroundSlam" type="AnimatedSprite" parent="Animations"]
@@ -127,6 +128,7 @@ one_shot = true
 [node name="Timers" type="AnimationPlayer" parent="."]
 anims/GunReload = SubResource( 2 )
 
+[connection signal="timeout" from="InvulnerabilityReset" to="." method="_on_InvulnerabilityReset_timeout"]
 [connection signal="timeout" from="Sound/PunchHitDelay" to="Animations/Attacks" method="_on_PunchHitDelay_timeout"]
 [connection signal="animation_finished" from="Animations/Attacks" to="Animations/Attacks" method="_on_Attacks_animation_finished"]
 [connection signal="body_entered" from="Animations/PunchH_Hitbox" to="Animations/Attacks" method="_on_PunchH_Hitbox_body_entered"]
