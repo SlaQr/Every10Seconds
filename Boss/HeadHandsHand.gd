@@ -57,6 +57,10 @@ func _ready():
 	seeked_position = Vector2(300, 300)
 
 	delay = get_parent().get_parent().delay
+	connect("test_signal", self, "test")
+
+func test():
+	pass
 
 func _process(delta):
 
