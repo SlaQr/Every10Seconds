@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/TileMap/Tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://Animation/Ground_LVL_1/Ground0000.png" type="Texture" id=3]
 [ext_resource path="res://PlayerSpawn.gd" type="Script" id=4]
+[ext_resource path="res://Boss/HeadHandsHead.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Boss/HeadHandsHand.tscn" type="PackedScene" id=6]
 
 [node name="Level" type="Navigation2D"]
 edge_connection_margin = 32.0
 script = ExtResource( 2 )
-next_level = "res://Levels/Level3.tscn"
+next_level = "res://Levels/Level2.tscn"
 
 [node name="LevelSwitchTimer" type="Timer" parent="."]
 wait_time = 11.0
@@ -63,6 +65,16 @@ position = Vector2( 960, 512 )
 position = Vector2( 960, 576 )
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="HeadHandsHead" parent="." instance=ExtResource( 5 )]
+position = Vector2( 480, 96 )
+
+[node name="HeadHandsHand" parent="." instance=ExtResource( 6 )]
+position = Vector2( 480, 32 )
+
+[node name="HeadHandsHand2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 480, 32 )
+scale = Vector2( -1, 1 )
 
 [connection signal="timeout" from="LevelSwitchTimer" to="." method="_on_LevelSwitchTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

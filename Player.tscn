@@ -85,6 +85,7 @@ scale = Vector2( 0.15, 0.15 )
 [node name="Movement" parent="Animations" instance=ExtResource( 3 )]
 z_index = 2
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="GroundSlam" type="AnimatedSprite" parent="Animations"]

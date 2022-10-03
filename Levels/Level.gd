@@ -56,3 +56,9 @@ func _on_SpawnTimer_timeout():
 # next level
 func _on_LevelSwitchTimer_timeout():
 	Global.emit_signal("next_level")
+
+
+func _on_MusicStart_timeout():
+
+	get_tree().root.find_node("Music", true, false).play()
+	pass # Replace with function body.

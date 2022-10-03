@@ -16,3 +16,4 @@ func _on_Start_pressed():
 	
 	get_parent().change_levels()
 	visible = false
+	#get_node("../Music").play()

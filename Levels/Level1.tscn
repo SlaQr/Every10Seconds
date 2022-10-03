@@ -10,8 +10,12 @@ edge_connection_margin = 32.0
 script = ExtResource( 2 )
 next_level = "res://Levels/Level2.tscn"
 
+[node name="MusicStart" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [node name="LevelSwitchTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 11.0
 one_shot = true
 autostart = true
 
@@ -64,5 +68,6 @@ position = Vector2( 960, 576 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
+[connection signal="timeout" from="MusicStart" to="." method="_on_MusicStart_timeout"]
 [connection signal="timeout" from="LevelSwitchTimer" to="." method="_on_LevelSwitchTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
