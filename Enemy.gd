@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-onready var hit_sound_delay: Timer = get_node("HitSoundDelay")
-onready var hit_sound: AudioStreamPlayer = get_node("HitSound")
+#onready var hit_sound_delay: Timer = get_node("HitSoundDelay")
+#onready var hit_sound: AudioStreamPlayer = get_node("HitSound")
 
 # Declare member variables here. Examples:
 # var a = 2
