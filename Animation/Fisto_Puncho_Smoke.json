@@ -1,0 +1,83 @@
+{"frames": {
+
+"Smoke0000":
+{
+	"frame": {"x":0,"y":0,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0001":
+{
+	"frame": {"x":1650,"y":0,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0002":
+{
+	"frame": {"x":3300,"y":0,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0003":
+{
+	"frame": {"x":4950,"y":0,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0004":
+{
+	"frame": {"x":0,"y":1030,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0005":
+{
+	"frame": {"x":1650,"y":1030,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0006":
+{
+	"frame": {"x":3300,"y":1030,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0007":
+{
+	"frame": {"x":4950,"y":1030,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+},
+"Smoke0008":
+{
+	"frame": {"x":0,"y":2060,"w":1650,"h":1030},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1650,"h":1030},
+	"sourceSize": {"w":1650,"h":1030}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho_Smoke.png",
+	"format": "RGBA8888",
+	"size": {"w":8192,"h":4096},
+	"scale": "1"
+}
+}
