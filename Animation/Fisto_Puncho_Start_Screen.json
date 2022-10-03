@@ -1,0 +1,19 @@
+﻿{"frames": {
+
+"Start_Screen0000":
+{
+	"frame": {"x":0,"y":0,"w":1358,"h":803},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1358,"h":803},
+	"sourceSize": {"w":1358,"h":803}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "22.0.1.105",
+	"image": "Fisto_Puncho_Start_Screen.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":1024},
+	"scale": "1"
+}
+}
